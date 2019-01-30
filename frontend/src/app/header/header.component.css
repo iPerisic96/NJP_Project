@@ -1,0 +1,18 @@
+.nav-button {
+    padding: 11px 12px;
+    font-size: 15px;
+    border-radius: 2px;
+    line-height: 1.35135;
+    border: 1px solid transparent;
+    font-weight: 600;
+}
+
+.nav-button-login {
+    color: #686f7a;
+    background-color: #fff;
+    border: 1px solid #505763;
+}
+
+.navbar-nav li {
+    padding-right: 10px;
+}

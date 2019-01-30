@@ -1,0 +1,36 @@
+<!-- <div class="post" *ngFor="let post of posts;let i = index">
+  <h5>{{post[1]}}</h5>
+  <img style="max-height:300px;max-width:300px;" [src]="images[i]" alt="Place image title" *ngIf="images[i]">
+</div>
+
+<p-paginator [rows]="1" [totalRecords]="count" (onPageChange)="paginate($event)"></p-paginator> -->
+<div class="container">
+  <br />
+  <h2>Explore page</h2>
+<br />
+<p-dataView [value]="posts" [paginator]="true" [rows]="1" [lazy]="true" (onLazyLoad)="paginate($event)" [totalRecords]="count"
+  *ngIf="auth.isAuthenticated()">
+  <ng-template let-post pTemplate="listItem">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" [src]="images[currentPage]" alt="Card image cap" *ngIf="images[currentPage]">
+          <div class="card-body">
+            <a [routerLink]="['profile', post[1]]">
+            <h5 class="card-title">{{post[1]}}</h5>
+          </a>
+            <p class="card-text">2 likes</p>
+            <a href="#" (click)="like()" class="btn btn-outline-danger">Like</a>
+          </div>
+        </div>
+      
+
+
+
+    <!-- <div>
+      <a [routerLink]="['profile', post[1]]">
+        <h5>{{post[1]}}</h5> <!-- username from post -->
+     <!-- </a>
+      <img style="max-height:300px;max-width:300px;" [src]="images[currentPage]" alt="Place image title" *ngIf="images[currentPage]">
+    </div> -->
+  </ng-template>
+</p-dataView>
+</div>

@@ -1,0 +1,82 @@
+<!-- <div class="container h-100 d-flex justify-content-center">
+  <div class=" my-auto">
+    <form (ngSubmit)="register()" [formGroup]="loginForm">
+      <div class="form">
+        <label for="username">Username</label> <br />
+        <input #username type="text" [formControlName]="'username'"> <br />
+        <label for="mail">Email</label> <br />
+        <input #mail type="text" [formControlName]="'email'"> <br />
+        <label for="name">Password</label> <br />
+        <input #name type="password" [formControlName]="'password'"> <br />
+        <button class="myBtn">Register</button>
+      </div>
+      <br>
+    </form>
+  </div>
+</div> -->
+
+<!-- <div class="login-form">
+    <form (ngSubmit)="register()" [formGroup]="registrationForm">
+        <h2 class="text-center">Register</h2>       
+        <div class="form-group">
+            <input #username type="text" class="form-control" placeholder="Username" required="required" [formControlName]="'username'">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" required [formControlName]="'email'">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" required="required" [formControlName]="'password'">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+        </div>
+    </form>
+</div> -->
+
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Registration</h3>
+                <form [formGroup]="registrationForm" (ngSubmit)="register()">
+                        <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Username is required</div>
+                                </div>
+                            </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/postImage">Post image</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['profile', auth.getId()]">My profile</a>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-outline-primary" routerLink="/login" *ngIf="!auth.isAuthenticated()">Log
+          in</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-outline-secondary" routerLink="/register" *ngIf="!auth.isAuthenticated()">Sign
+          up</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-outline-primary" (click)="logout()" *ngIf="auth.isAuthenticated()">Log
+          out</button>
+      </li>
+    </ul>
+  </div>
+</nav>
